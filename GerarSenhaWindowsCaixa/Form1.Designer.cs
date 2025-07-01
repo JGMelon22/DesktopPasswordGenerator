@@ -96,7 +96,7 @@
             checkBox1.TabIndex = 4;
             checkBox1.Text = "Senha Forte";
             checkBox1.UseVisualStyleBackColor = true;
-            //checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
             // button3
             // 
@@ -109,7 +109,7 @@
             button3.TabIndex = 5;
             button3.Text = "Gerar";
             button3.UseVisualStyleBackColor = true;
-            //button3.Click += button3_Click;
+            button3.Click += button3_Click;
             // 
             // Form1
             // 
