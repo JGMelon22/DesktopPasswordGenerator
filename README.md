@@ -1,5 +1,5 @@
 # DesktopPasswordGenerator
-A simple WinForms desktop application to generate passwords by changing vowels to numbers. 
+A simple WinForms desktop application to generate passwords by changing vowels to numbers and strong password as well. 
 
 ## 🚀 Motivation
 My father, once in a while, needs to change it's work laptop password, due to a company policy and, to make it easier, I decided to develop this application to facilitate his needs.
@@ -12,12 +12,9 @@ My father, once in a while, needs to change it's work laptop password, due to a 
 </div>
 
 ### 📸 Project Preview
-
-<div style="display: flex; gap: 20px; flex-wrap: wrap;">
-  <div>
-    <img src="https://github.com/user-attachments/assets/5277e597-8ce9-4cee-9050-c1130d852dfe" alt="Form"/>
-  </div>
-  <div>
+<div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+  <img src="https://github.com/user-attachments/assets/f4020b81-469a-4ba4-9f3d-78fdb07892dd" alt="SimplePassword" style="width: 50%;" />
+  <img src="https://github.com/user-attachments/assets/87dd4c81-b37b-4e47-b058-27437e0324a2" alt="ComplexPassword" style="width: 40%;" />
 </div>
 
 ### 📚 References
