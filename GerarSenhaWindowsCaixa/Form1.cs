@@ -12,6 +12,7 @@ public partial class Form1 : Form
         InitializeComponent();
         textBox1.Clear();
         button2.Enabled = false;
+        button3.Visible = false;
     }
 
     private void button2_Click(object sender, EventArgs e)
@@ -23,6 +24,7 @@ public partial class Form1 : Form
     private void button1_Click(object sender, EventArgs e)
     {
         PasswordGeneratorService passwordGeneratorService = new();
+
         try
         {
             string nomePais = textBox1.Text.ToString();
@@ -59,6 +61,38 @@ public partial class Form1 : Form
         if (AlphaNumericRegex().IsMatch(e.KeyChar.ToString()))
         {
             e.Handled = true;
+        }
+    }
+
+    private void button3_Click(object sender, EventArgs e)
+    {
+        PasswordGeneratorService passwordGeneratorService = new();
+
+        try
+        {
+            string password = passwordGeneratorService.NovaSenhaForte();
+
+            MessageBox.Show(password, "Sua nova senha Forte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+    }
+
+    private void checkBox1_CheckedChanged(object sender, EventArgs e)
+    {
+        if (checkBox1.Checked)
+        {
+            button1.Visible = false;
+            button3.Visible = true;
+            textBox1.Enabled = false;
+        }
+        else
+        {
+            button1.Visible = true;
+            button3.Visible = false;
+            textBox1.Enabled = true;
         }
     }
 }

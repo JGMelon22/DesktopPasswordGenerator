@@ -33,18 +33,20 @@
             button1 = new Button();
             button2 = new Button();
             label1 = new Label();
+            checkBox1 = new CheckBox();
+            button3 = new Button();
             SuspendLayout();
             // 
             // textBox1
             // 
-            textBox1.CharacterCasing = CharacterCasing.Upper;
+            textBox1.CharacterCasing = CharacterCasing.Lower;
             textBox1.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             textBox1.Location = new Point(10, 34);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.MaxLength = 50;
             textBox1.Name = "textBox1";
             textBox1.ShortcutsEnabled = false;
-            textBox1.Size = new Size(245, 26);
+            textBox1.Size = new Size(292, 26);
             textBox1.TabIndex = 0;
             textBox1.KeyPress += textBox1_KeyPress;
             textBox1.Leave += textBox1_Leave;
@@ -66,7 +68,7 @@
             // 
             button2.Cursor = Cursors.Hand;
             button2.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.Location = new Point(129, 67);
+            button2.Location = new Point(176, 67);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(126, 30);
@@ -85,12 +87,38 @@
             label1.TabIndex = 3;
             label1.Text = "Digite um nome de um país:";
             // 
+            // checkBox1
+            // 
+            checkBox1.AutoSize = true;
+            checkBox1.Location = new Point(214, 7);
+            checkBox1.Name = "checkBox1";
+            checkBox1.Size = new Size(88, 19);
+            checkBox1.TabIndex = 4;
+            checkBox1.Text = "Senha Forte";
+            checkBox1.UseVisualStyleBackColor = true;
+            //checkBox1.CheckedChanged += checkBox1_CheckedChanged;
+            // 
+            // button3
+            // 
+            button3.Cursor = Cursors.Hand;
+            button3.Font = new Font("Segoe UI", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.Location = new Point(10, 67);
+            button3.Margin = new Padding(3, 2, 3, 2);
+            button3.Name = "button3";
+            button3.Size = new Size(113, 30);
+            button3.TabIndex = 5;
+            button3.Text = "Gerar";
+            button3.UseVisualStyleBackColor = true;
+            //button3.Click += button3_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoValidate = AutoValidate.Disable;
-            ClientSize = new Size(264, 106);
+            ClientSize = new Size(314, 101);
+            Controls.Add(button3);
+            Controls.Add(checkBox1);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button1);
@@ -113,5 +141,7 @@
         private Button button1;
         private Button button2;
         private Label label1;
+        private CheckBox checkBox1;
+        private Button button3;
     }
 }
