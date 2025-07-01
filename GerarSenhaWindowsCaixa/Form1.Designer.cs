@@ -44,6 +44,8 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(245, 26);
             textBox1.TabIndex = 0;
+            textBox1.ShortcutsEnabled = false;
+            textBox1.KeyPress += textBox1_KeyPress;
             textBox1.Leave += textBox1_Leave;
             // 
             // button1

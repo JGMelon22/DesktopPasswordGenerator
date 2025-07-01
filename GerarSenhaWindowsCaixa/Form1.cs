@@ -46,5 +46,10 @@ namespace GerarSenhaWindowsCaixa
                 button2.Enabled = true;
             }
         }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = e.KeyChar == (char)Keys.Space;
+        }
     }
 }
