@@ -64,7 +64,9 @@ public class PasswordGeneratorService
     }
 
     private string DataSenhaCriada()
-        => DateTime.Now.Month.ToString().PadLeft(2, '0') + DateTime.Now.Year.ToString();
+        => DateTime.Now.Day.ToString().PadLeft(2, '0') +
+           DateTime.Now.Month.ToString().PadLeft(2, '0') +
+           DateTime.Now.Year.ToString();
 
     private string PrimeiraLetraMaiuscula(string texto)
         => char.ToUpper(texto[0]) + texto.Substring(1);
