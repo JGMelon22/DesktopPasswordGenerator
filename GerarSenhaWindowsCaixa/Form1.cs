@@ -25,28 +25,21 @@ public partial class Form1 : Form
     {
         PasswordGeneratorService passwordGeneratorService = new();
 
-        try
+        string nomePais = textBox1.Text.ToString();
+
+        if (!string.IsNullOrEmpty(nomePais) && !string.IsNullOrWhiteSpace(nomePais))
         {
-            string nomePais = textBox1.Text.ToString();
+            string senha = passwordGeneratorService.NovaSenha(nomePais);
 
-            if (!string.IsNullOrEmpty(nomePais) && !string.IsNullOrWhiteSpace(nomePais))
-            {
-                string senha = passwordGeneratorService.NovaSenha(nomePais);
+            Clipboard.SetText(senha);
 
-                Clipboard.SetText(senha);
-
-                MessageBox.Show("Sua senha foi copiada para a área de transferência: " +
-                    senha, "Sua nova senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            if (textBox1.Text.Length > 0)
-            {
-                button2.Enabled = true;
-            }
+            MessageBox.Show("Sua senha foi copiada para a área de transferência: " +
+                senha, "Sua nova senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
-        catch (Exception ex)
+
+        if (textBox1.Text.Length > 0)
         {
-            MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            button2.Enabled = true;
         }
     }
 
@@ -72,18 +65,13 @@ public partial class Form1 : Form
     {
         PasswordGeneratorService passwordGeneratorService = new();
 
-        try
-        {
-            string password = passwordGeneratorService.NovaSenhaForte();
 
-            Clipboard.SetText(password);
+        string password = passwordGeneratorService.NovaSenhaForte();
 
-            MessageBox.Show("Sua senha foi copiada para a área de transferência: " + password, "Sua nova senha Forte", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
-        catch (Exception ex)
-        {
-            MessageBox.Show(ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        }
+        Clipboard.SetText(password);
+
+        MessageBox.Show("Sua senha foi copiada para a área de transferência: " + password,
+            "Sua nova senha Forte", MessageBoxButtons.OK, MessageBoxIcon.Information);
     }
 
     private void checkBox1_CheckedChanged(object sender, EventArgs e)
