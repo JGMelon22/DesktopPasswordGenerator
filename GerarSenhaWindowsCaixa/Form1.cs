@@ -32,7 +32,11 @@ public partial class Form1 : Form
             if (!string.IsNullOrEmpty(nomePais) && !string.IsNullOrWhiteSpace(nomePais))
             {
                 string senha = passwordGeneratorService.NovaSenha(nomePais);
-                MessageBox.Show(senha, "Sua nova senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                Clipboard.SetText(senha);
+
+                MessageBox.Show("Sua senha foi copiada para a área de transferência: " +
+                    senha, "Sua nova senha", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
             if (textBox1.Text.Length > 0)
@@ -72,7 +76,9 @@ public partial class Form1 : Form
         {
             string password = passwordGeneratorService.NovaSenhaForte();
 
-            MessageBox.Show(password, "Sua nova senha Forte", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Clipboard.SetText(password);
+
+            MessageBox.Show("Sua senha foi copiada para a área de transferência: " + password, "Sua nova senha Forte", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         catch (Exception ex)
         {
